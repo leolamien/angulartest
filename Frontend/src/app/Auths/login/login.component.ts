@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {}
 
   onSubmit(): void {
-    alert("test")
     const {email, password } =
       this.form;
     //console.log(firstname, lastname, email, password, birthDate );
@@ -30,6 +29,7 @@ export class LoginComponent implements OnInit{
     .login(email, password)
     .subscribe({
       next: (data) => {
+        alert("test")
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
