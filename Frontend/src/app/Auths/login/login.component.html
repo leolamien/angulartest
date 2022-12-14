@@ -4,7 +4,14 @@
       <div class="col-md-6 col-lg-4">
         <div class="login-wrap p-0">
           <h3 class="mb-4 text-center">Avez-vous un compte?</h3>
-          <form action="#" class="signin-form">
+          <form
+            class="signin-form"
+            *ngIf="!isSuccessful"
+            name="form"
+            (ngSubmit)="f.form.valid && onSubmit()"
+            #f="ngForm"
+            novalidate
+          >
             <div class="form-group">
               <input
                 type="text"
